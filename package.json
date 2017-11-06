@@ -1,0 +1,29 @@
+{
+  "name": "eslint-plugin-log-context",
+  "version": "0.0.0",
+  "description": "log context should be setup and clean before running and closing a function",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "Hung Vo",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "mocha": "^3.1.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint-plugin-import": "^2.8.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "ISC"
+}
