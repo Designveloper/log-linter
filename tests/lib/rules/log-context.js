@@ -20,7 +20,7 @@ const rule = require('../../../lib/rules/log-context');
 const ruleTester = new RuleTester();
 ruleTester.run('log-context', rule, {
 
-  valid: [{
+  invalid: [{
     code: `
       function isSignatureValid(request) {
       Log.setContext({
@@ -39,13 +39,20 @@ ruleTester.run('log-context', rule, {
     // give me some code that won't trigger a warning
   ],
 
-  invalid: [
+  valid: [
+    // {
+    // code: "function() {Log.info('123')}",
+    // errors: [{
+    // message: 'Missing log context',
+    // type: 'Log_context_missing',
+    // }],
+    // },
     {
-      code: "function() {Log.info('123')}",
-      errors: [{
-        message: 'Missing log context',
-        type: 'Log_context_missing',
-      }],
+      code: `
+        function sum(a, b) {
+          return a + b;
+        }
+      `,
     },
   ],
 });
